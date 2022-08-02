@@ -1,7 +1,7 @@
 //BackEnd
 const express = require("express");
 const app = express();
-
+const port = process.env.PORT || 3000
 app.get("/wordle/:guess", async function (req, res) {
   const ourword = "lucky";
   let ourwordMap = {
@@ -38,4 +38,4 @@ app.get("/wordle/:guess", async function (req, res) {
 });
 app.use(express.static("public"));
 
-app.listen(3000);
+app.listen(port);
